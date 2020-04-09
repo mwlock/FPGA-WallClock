@@ -1,0 +1,65 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
+| Date         : Thu Apr  9 13:14:15 2020
+| Host         : linux running 64-bit Ubuntu 18.04.3 LTS
+| Command      : report_control_sets -verbose -file WallClock_control_sets_placed.rpt
+| Design       : WallClock
+| Device       : xc7a100t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     3 |
+| Unused register locations in slices containing registers |     8 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              21 |            7 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               7 |            3 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               4 |            1 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------------+-------------------+------------------+------------------+----------------+
+|     Clock Signal     |   Enable Signal   | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------------+-------------------+------------------+------------------+----------------+
+|  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF          |                1 |              4 |
+|  CLK100MHZ_IBUF_BUFG |                   | SW_IBUF          |                3 |              7 |
+|  CLK100MHZ_IBUF_BUFG |                   |                  |                7 |             21 |
++----------------------+-------------------+------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 4      |                     1 |
+| 7      |                     1 |
+| 16+    |                     1 |
++--------+-----------------------+
+
+

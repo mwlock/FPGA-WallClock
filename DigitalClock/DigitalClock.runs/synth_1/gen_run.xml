@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1586430798">
+  <File Type="VDS-TIMING-PB" Name="WallClock_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="WallClock_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="WallClock.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="WallClock_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="WallClock_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="WallClock_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="WallClock.vds"/>
+  <File Type="PA-TCL" Name="WallClock.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Embedded_Prac4/BCD_Decoder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../BCD_Decoder.v"/>
+        <Attr Name="ImportTime" Val="1586357298"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Embedded_Prac4/SS_Driver.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../SS_Driver.v"/>
+        <Attr Name="ImportTime" Val="1586357298"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Embedded_Prac4/Clock.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Clock.v"/>
+        <Attr Name="ImportTime" Val="1586357298"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="WallClock"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
