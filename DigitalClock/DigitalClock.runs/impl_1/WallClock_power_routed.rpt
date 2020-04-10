@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date             : Fri Apr 10 02:31:58 2020
+| Date             : Fri Apr 10 12:50:33 2020
 | Host             : linux running 64-bit Ubuntu 18.04.3 LTS
 | Command          : report_power -file WallClock_power_routed.rpt -pb WallClock_power_summary_routed.pb -rpx WallClock_power_routed.rpx
 | Design           : WallClock
@@ -50,12 +50,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      275 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      106 |     63400 |            0.17 |
+| Slice Logic    |    <0.001 |      279 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      110 |     63400 |            0.17 |
 |   CARRY4       |    <0.001 |       12 |     15850 |            0.08 |
 |   Register     |    <0.001 |      108 |    126800 |            0.09 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |    <0.001 |      225 |       --- |             --- |
+| Signals        |    <0.001 |      229 |       --- |             --- |
 | I/O            |    <0.001 |       18 |       210 |            8.57 |
 | Static Power   |     0.097 |          |           |                 |
 | Total          |     0.099 |          |           |                 |

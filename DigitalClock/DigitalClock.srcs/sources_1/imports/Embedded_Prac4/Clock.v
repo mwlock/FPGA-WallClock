@@ -79,7 +79,7 @@ module WallClock(
                 nextState <=running;
             running:
                 if (timer == (second-'d4)) nextState <=incSec;  // Account for time taken to change state
-                else if (seconds == 'd60 && timer == (second-'d3)) nextState <=incMin;
+                else if (seconds == 'd60 && timer == (second-'d1)) nextState <=incMin;
                 else if (minutes == 'd60 && timer == (second-'d1)) nextState <=incHr;
                 else if (hours == 'd24 && timer == (second-'d1)) nextState <=start;
                 else nextState<=running;
