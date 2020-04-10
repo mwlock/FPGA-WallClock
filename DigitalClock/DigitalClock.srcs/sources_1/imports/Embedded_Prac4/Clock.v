@@ -25,6 +25,12 @@ module WallClock(
 	reg [3:0]hours2=4'd0;
 	reg [3:0]mins1=4'd0;
 	reg [3:0]mins2=4'd0;
+	reg [3:0]secs1=4'd0;
+	reg [3:0]secs2=4'd0;
+	
+	// Register for keeping time
+	reg [26:0] timer = 'd0;
+	reg [26:0] second = 'd100000000; // Determines how long a second will be
     
 	//Initialize seven segment
 	reg  [3:0] leftSegment = 4'b1111; // Turn off left segment
@@ -33,7 +39,7 @@ module WallClock(
 		
     // Update Display
     always @(posedge CLK100MHZ) begin
-        AN[7:0]<={leftSegment[3:0],SegmentDrivers[3:0]};
+        AN[7:0]<={SegmentDrivers[7:4],2'b11,SegmentDrivers[1:0]};
         SS[7:0]<=SevenSegment[7:0];      
     end
 	
@@ -41,12 +47,98 @@ module WallClock(
 	SS_Driver SS_Driver1(
 		CLK100MHZ,
 	    SW,
-		4'd1, 4'd2, 4'd3, 4'd4, // Use temporary test values before adding hours2, hours1, mins2, mins1
+		hours1,hours2,mins1,mins2, 'd0, 'd0, secs1, secs2, // Use temporary test values before adding hours2, hours1, mins2, mins1
 		SegmentDrivers, SevenSegment
 	);
 	
+	// Moore FSM for clock
+	// Simple state machine ============================================================================
+	
+	reg [2:0] currentState,nextState;
+	reg [5:0] seconds='d0;
+	reg [5:0] minutes;
+	reg [4:0] hours;
+	
+	parameter [2:0] start='d0;
+    parameter [2:0] running='d1;
+    parameter [2:0] incMin='d2;
+    parameter [2:0] incHr='d3;
+    parameter [2:0] incSec='d4;
+    
+    
+    // Sequential logic
+    always @(posedge CLK100MHZ) begin
+        if (SW)  currentState<=start;
+        else currentState <=nextState;
+    end
+    
+    // Combinational logic for next state
+    always @(posedge CLK100MHZ) begin
+        case (currentState)
+            start:
+                nextState <=running;
+            running:
+                if (timer == (second-'d4)) nextState <=incSec;  // Account for time taken to change state
+                else if (seconds == 'd60 && timer == (second-'d3)) nextState <=incMin;
+                else if (minutes == 'd60 && timer == (second-'d1)) nextState <=incHr;
+                else if (hours == 'd24 && timer == (second-'d1)) nextState <=start;
+                else nextState<=running;
+            incSec:
+                nextState<=running;
+            incMin:
+                nextState<=running;
+            incHr:
+                nextState<=running;
+            default : nextState<=start;                
+        endcase
+    end
+    
+    // Combinational output and eventlogic
+    always @(posedge CLK100MHZ) begin
+        case(currentState)
+            start: begin
+                seconds <= 1'b0;
+                minutes<='d0;
+                hours<='d0;
+            end
+            incSec: 
+                seconds<=seconds+1'b1;
+            incMin: begin
+                seconds <= 1'b0;
+                minutes <= minutes+1'b1;
+            end
+            incHr: begin
+                seconds <= 1'b0;
+                minutes <= 1'b0;
+                hours <= hours + 1'b1;
+            end           
+        endcase        
+        // Set display bits
+        hours1 <= hours / 'd10;
+        hours2 <= hours % 'd10;
+        mins1 <= minutes / 'd10;
+        mins2 <= minutes % 'd10;
+        secs1 <= seconds / 'd10;
+        secs2 <= seconds % 'd10;
+    end   
+	
+	
+	// =================================================================================================
+	
 	//The main logic
-	always @(posedge CLK100MHZ) begin
-		// implement your logic here
+	always @(posedge CLK100MHZ) begin	
+	
+	   // Reset timer
+	   if (SW) timer <= 1'b0; 	
+	             
+       // Increment timer
+	   else begin
+            timer <= timer+1'b1;	
+            //Increment seconds
+            if(timer == (second)) begin
+                timer <= 1'b0;
+            end
+		end		
 	end
+	
 endmodule  
