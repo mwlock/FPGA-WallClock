@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Fri Apr 10 12:50:15 2020
+| Date         : Fri Apr 10 15:37:15 2020
 | Host         : linux running 64-bit Ubuntu 18.04.3 LTS
 | Command      : report_control_sets -verbose -file WallClock_control_sets_placed.rpt
 | Design       : WallClock
@@ -38,7 +38,7 @@ Table of Contents
 | No           | Yes                   | No                     |              30 |           11 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              25 |            6 |
+| Yes          | Yes                   | No                     |              25 |            7 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -48,9 +48,9 @@ Table of Contents
 +----------------------+-------------------+--------------------+------------------+----------------+
 |     Clock Signal     |   Enable Signal   |  Set/Reset Signal  | Slice Load Count | Bel Load Count |
 +----------------------+-------------------+--------------------+------------------+----------------+
-|  CLK100MHZ_IBUF_BUFG | hours             | hours[4]_i_1_n_0   |                2 |              5 |
-|  CLK100MHZ_IBUF_BUFG | seconds           | seconds[5]_i_1_n_0 |                1 |              6 |
-|  CLK100MHZ_IBUF_BUFG | minutes           | minutes[5]_i_1_n_0 |                1 |              6 |
+|  CLK100MHZ_IBUF_BUFG | hours             | hours[4]_i_1_n_0   |                1 |              5 |
+|  CLK100MHZ_IBUF_BUFG | seconds           | seconds[5]_i_1_n_0 |                2 |              6 |
+|  CLK100MHZ_IBUF_BUFG | minutes           | minutes[5]_i_1_n_0 |                2 |              6 |
 |  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF            |                2 |              8 |
 |  CLK100MHZ_IBUF_BUFG |                   | SW_IBUF            |               11 |             30 |
 |  CLK100MHZ_IBUF_BUFG |                   |                    |               21 |             53 |

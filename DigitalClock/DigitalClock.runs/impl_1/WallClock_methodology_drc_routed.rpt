@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Fri Apr 10 12:50:33 2020
+| Date         : Fri Apr 10 15:37:33 2020
 | Host         : linux running 64-bit Ubuntu 18.04.3 LTS
 | Command      : report_methodology -file WallClock_methodology_drc_routed.rpt -rpx WallClock_methodology_drc_routed.rpx
 | Design       : WallClock

@@ -78,9 +78,9 @@ module WallClock(
             start:
                 nextState <=running;
             running:
-                if (timer == (second-'d4)) nextState <=incSec;  // Account for time taken to change state
-                else if (seconds == 'd60 && timer == (second-'d1)) nextState <=incMin;
-                else if (minutes == 'd60 && timer == (second-'d1)) nextState <=incHr;
+                if (timer == (second-'d10)) nextState <=incSec;  // Account for time taken to change state
+                else if (seconds == 'd60 && timer == (second-'d7)) nextState <=incMin;
+                else if (minutes == 'd60 && timer == (second-'d4)) nextState <=incHr;
                 else if (hours == 'd24 && timer == (second-'d1)) nextState <=start;
                 else nextState<=running;
             incSec:
