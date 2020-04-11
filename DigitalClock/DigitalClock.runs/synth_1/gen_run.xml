@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1586525780">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1586647177">
   <File Type="VDS-TIMING-PB" Name="WallClock_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="WallClock_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="WallClock.dcp"/>
@@ -13,6 +13,15 @@
     <File Path="$PSRCDIR/sources_1/imports/Embedded_Prac4/BCD_Decoder.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../BCD_Decoder.v"/>
+        <Attr Name="ImportTime" Val="1586357298"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Embedded_Prac4/Debounce.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Debounce.v"/>
         <Attr Name="ImportTime" Val="1586357298"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -55,9 +64,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

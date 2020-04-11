@@ -4,12 +4,22 @@ module WallClock(
 	//inputs - these will depend on your board's constraint files
 	input	CLK100MHZ,
     input   SW , // Acting as ON/OFF switch for now 
+    input   BTNC,
+    input   BTNU,
+    input   BTNL,
+    input   BTNR,
+    input   BTND,
 
 	//outputs - these will depend on your board's constraint files,
 	output reg [7:0]SS,	// Seven segment display 
-	output reg [7:0] AN // Seven segment display enable
+	output reg [7:0] AN, // Seven segment display enable
+	
+	// LEDs
+	output wire LED
 	
 );
+
+    assign LED = BTNR;
 
 	//Add the reset
 
@@ -19,6 +29,13 @@ module WallClock(
 	wire HButton;
 	
 	// Instantiate Debounce modules here
+	wire incMinBtn;
+	
+	Debounce debounce1(
+        CLK100MHZ, 
+        BTNR,
+        incMinBtn 
+    );
 	
 	// registers for storing the time
     reg [3:0]hours1=4'd0;
@@ -73,15 +90,15 @@ module WallClock(
     end
     
     // Combinational logic for next state
-    always @(posedge CLK100MHZ) begin
+    always @(currentState,timer) begin
         case (currentState)
             start:
                 nextState <=running;
             running:
-                if (timer == (second-'d10)) nextState <=incSec;  // Account for time taken to change state
-                else if (seconds == 'd60 && timer == (second-'d7)) nextState <=incMin;
-                else if (minutes == 'd60 && timer == (second-'d4)) nextState <=incHr;
-                else if (hours == 'd24 && timer == (second-'d1)) nextState <=start;
+                if (timer == (second-'d1)) nextState <=incSec;  // Account for time taken to change state
+                else if (seconds == 'd60 || incMinBtn ) nextState <=incMin;
+                else if (minutes == 'd60) nextState <=incHr;
+                else if (hours == 'd24) nextState <=start;
                 else nextState<=running;
             incSec:
                 nextState<=running;
