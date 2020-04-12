@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Sun Apr 12 01:20:30 2020
+| Date         : Sun Apr 12 16:37:40 2020
 | Host         : linux running 64-bit Ubuntu 18.04.3 LTS
 | Command      : report_control_sets -verbose -file WallClock_control_sets_placed.rpt
 | Design       : WallClock
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     7 |
-| Unused register locations in slices containing registers |    13 |
+| Number of unique control sets                            |     4 |
+| Unused register locations in slices containing registers |    11 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,38 +33,34 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              52 |           22 |
+| No           | No                    | No                     |             113 |           44 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              54 |           17 |
+| No           | Yes                   | No                     |              30 |           12 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              25 |            8 |
+| Yes          | Yes                   | No                     |              14 |            4 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+-------------------+-----------------------------+------------------+----------------+
-|     Clock Signal     |   Enable Signal   |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
-+----------------------+-------------------+-----------------------------+------------------+----------------+
-|  CLK100MHZ_IBUF_BUFG | hours             | hours[4]_i_1_n_0            |                2 |              5 |
-|  CLK100MHZ_IBUF_BUFG | seconds           | seconds[5]_i_1_n_0          |                1 |              6 |
-|  CLK100MHZ_IBUF_BUFG | minutes           | minutes[5]_i_1_n_0          |                3 |              6 |
-|  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF                     |                2 |              8 |
-|  CLK100MHZ_IBUF_BUFG |                   | debounce1/Count[23]_i_1_n_0 |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG |                   | SW_IBUF                     |               11 |             30 |
-|  CLK100MHZ_IBUF_BUFG |                   |                             |               22 |             52 |
-+----------------------+-------------------+-----------------------------+------------------+----------------+
++----------------------+-------------------+--------------------+------------------+----------------+
+|     Clock Signal     |   Enable Signal   |  Set/Reset Signal  | Slice Load Count | Bel Load Count |
++----------------------+-------------------+--------------------+------------------+----------------+
+|  CLK100MHZ_IBUF_BUFG | seconds           | seconds[5]_i_1_n_0 |                2 |              6 |
+|  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF            |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG |                   | SW_IBUF            |               12 |             30 |
+|  CLK100MHZ_IBUF_BUFG |                   |                    |               44 |            113 |
++----------------------+-------------------+--------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
-| 5      |                     1 |
-| 6      |                     2 |
+| 6      |                     1 |
 | 8      |                     1 |
-| 16+    |                     3 |
+| 16+    |                     2 |
 +--------+-----------------------+
 
 

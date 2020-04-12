@@ -66,20 +66,5 @@ always @(currentState) begin
     endcase
 end
 
-
-//--------------------------------------------
-//always @(posedge clk) begin 
-
-//    if (&Count) begin
-//        if (debouncedBtn!=button) begin
-//            debouncedBtn = button;
-//            Count <= Count + 1'b1;
-//        end
-//    end
-    
-//    else if (!(&Count)) Count <= Count + 1'b1; 
-//end 
-
-
 endmodule
 

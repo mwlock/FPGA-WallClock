@@ -30,11 +30,18 @@ module WallClock(
 	
 	// Instantiate Debounce modules here
 	wire incMinBtn;
+	wire incHourBtn;
 	
 	Debounce debounce1(
         CLK100MHZ, 
         BTNR,
         incMinBtn 
+    );
+    
+    Debounce debounce2(
+        CLK100MHZ, 
+        BTNL,
+        incHourBtn 
     );
 	
 	// registers for storing the time
@@ -81,6 +88,9 @@ module WallClock(
     parameter [2:0] incMin='d2;
     parameter [2:0] incHr='d3;
     parameter [2:0] incSec='d4;
+    parameter [2:0] incMinOnly='d5;
+    parameter [2:0] incHourOnly='d6;
+    
     
     
     // Sequential logic
@@ -90,13 +100,15 @@ module WallClock(
     end
     
     // Combinational logic for next state
-    always @(currentState,timer) begin
+    always @(currentState,timer,incMinBtn,incHourBtn) begin
         case (currentState)
             start:
                 nextState <=running;
             running:
-                if (timer == (second-'d1)) nextState <=incSec;  // Account for time taken to change state
-                else if (seconds == 'd60 || incMinBtn ) nextState <=incMin;
+                if (incMinBtn) nextState <=incMinOnly;
+                else if (incHourBtn) nextState <=incHourOnly;
+                else if (timer == (second-'d1)) nextState <=incSec;  // Account for time taken to change state
+                else if (seconds == 'd60 ) nextState <=incMin;
                 else if (minutes == 'd60) nextState <=incHr;
                 else if (hours == 'd24) nextState <=start;
                 else nextState<=running;
@@ -104,7 +116,11 @@ module WallClock(
                 nextState<=running;
             incMin:
                 nextState<=running;
+            incMinOnly:
+                nextState<=running;
             incHr:
+                nextState<=running;
+            incHourOnly:
                 nextState<=running;
             default : nextState<=start;                
         endcase
@@ -113,22 +129,37 @@ module WallClock(
     // Combinational output and eventlogic
     always @(posedge CLK100MHZ) begin
         case(currentState)
+        
             start: begin
                 seconds <= 1'b0;
                 minutes<='d0;
                 hours<='d0;
             end
+            
             incSec: 
                 seconds<=seconds+1'b1;
+                
             incMin: begin
                 seconds <= 1'b0;
                 minutes <= minutes+1'b1;
             end
+            
+            incMinOnly: begin
+                if(minutes=='d59) minutes = 'd0;
+                else minutes <= minutes +1'b1;
+            end
+            
             incHr: begin
                 seconds <= 1'b0;
                 minutes <= 1'b0;
                 hours <= hours + 1'b1;
-            end           
+            end  
+            
+            incHourOnly: begin
+                if(hours=='d23) hours = 'd0;
+                else hours <= hours +1'b1;
+            end
+                     
         endcase        
         // Set display bits
         hours1 <= hours / 'd10;

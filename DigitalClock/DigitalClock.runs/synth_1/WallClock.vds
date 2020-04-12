@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Sun Apr 12 01:19:37 2020
-# Process ID: 2314
+# Start of session at: Sun Apr 12 16:36:45 2020
+# Process ID: 17662
 # Current directory: /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.runs/synth_1
 # Command line: vivado -log WallClock.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source WallClock.tcl
 # Log file: /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.runs/synth_1/WallClock.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2323 
+INFO: Helper process launched with PID 17670 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1179.465 ; gain = 71.996 ; free physical = 1356 ; free virtual = 4560
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1179.457 ; gain = 71.996 ; free physical = 1331 ; free virtual = 4767
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'WallClock' [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:3]
 	Parameter start bound to: 3'b000 
@@ -25,6 +25,8 @@ INFO: [Synth 8-638] synthesizing module 'WallClock' [/home/matthew/Matthew/UCT/2
 	Parameter incMin bound to: 3'b010 
 	Parameter incHr bound to: 3'b011 
 	Parameter incSec bound to: 3'b100 
+	Parameter incMinOnly bound to: 3'b101 
+	Parameter incHourOnly bound to: 3'b110 
 INFO: [Synth 8-638] synthesizing module 'Debounce' [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:1]
 	Parameter LowInput bound to: 2'b00 
 	Parameter EdgeDet bound to: 2'b01 
@@ -37,18 +39,16 @@ INFO: [Synth 8-638] synthesizing module 'SS_Driver' [/home/matthew/Matthew/UCT/2
 INFO: [Synth 8-638] synthesizing module 'BCD_Decoder' [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/BCD_Decoder.v:1]
 INFO: [Synth 8-256] done synthesizing module 'BCD_Decoder' (2#1) [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/BCD_Decoder.v:1]
 INFO: [Synth 8-256] done synthesizing module 'SS_Driver' (3#1) [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/SS_Driver.v:1]
-WARNING: [Synth 8-567] referenced signal 'seconds' should be on the sensitivity list [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:93]
-WARNING: [Synth 8-567] referenced signal 'incMinBtn' should be on the sensitivity list [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:93]
-WARNING: [Synth 8-567] referenced signal 'minutes' should be on the sensitivity list [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:93]
-WARNING: [Synth 8-567] referenced signal 'hours' should be on the sensitivity list [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:93]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:115]
+WARNING: [Synth 8-567] referenced signal 'seconds' should be on the sensitivity list [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:103]
+WARNING: [Synth 8-567] referenced signal 'minutes' should be on the sensitivity list [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:103]
+WARNING: [Synth 8-567] referenced signal 'hours' should be on the sensitivity list [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:103]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:131]
 INFO: [Synth 8-256] done synthesizing module 'WallClock' (4#1) [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:3]
 WARNING: [Synth 8-3331] design WallClock has unconnected port BTNC
 WARNING: [Synth 8-3331] design WallClock has unconnected port BTNU
-WARNING: [Synth 8-3331] design WallClock has unconnected port BTNL
 WARNING: [Synth 8-3331] design WallClock has unconnected port BTND
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1219.965 ; gain = 112.496 ; free physical = 1366 ; free virtual = 4570
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1219.957 ; gain = 112.496 ; free physical = 1340 ; free virtual = 4777
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -58,7 +58,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1219.965 ; gain = 112.496 ; free physical = 1365 ; free virtual = 4570
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1219.957 ; gain = 112.496 ; free physical = 1340 ; free virtual = 4777
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -74,45 +74,45 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1579.426 ; gain = 0.000 ; free physical = 1108 ; free virtual = 4319
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1580.426 ; gain = 0.000 ; free physical = 1097 ; free virtual = 4533
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1190 ; free virtual = 4395
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1173 ; free virtual = 4610
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1190 ; free virtual = 4395
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1173 ; free virtual = 4610
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1192 ; free virtual = 4397
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1175 ; free virtual = 4612
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element Count_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/SS_Driver.v:26]
 INFO: [Synth 8-802] inferred FSM for state register 'currentState_reg' in module 'WallClock'
-WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:88]
-INFO: [Synth 8-5544] ROM "hours" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "minutes" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:98]
 INFO: [Synth 8-5544] ROM "seconds" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:88]
-WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:88]
+WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:98]
+WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:98]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
                    start |                              000 |                              000
                  running |                              001 |                              001
-                  incSec |                              010 |                              100
-                  incMin |                              011 |                              010
-                   incHr |                              100 |                              011
+              incMinOnly |                              010 |                              101
+             incHourOnly |                              011 |                              110
+                  incSec |                              100 |                              100
+                  incMin |                              101 |                              010
+                   incHr |                              110 |                              011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'currentState_reg' using encoding 'sequential' in module 'WallClock'
-WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:88]
+WARNING: [Synth 8-6014] Unused sequential element currentState_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v:98]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1183 ; free virtual = 4388
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1166 ; free virtual = 4603
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -126,7 +126,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     27 Bit       Adders := 1     
-	   2 Input     24 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 2     
 	   2 Input      5 Bit       Adders := 1     
 +---Registers : 
@@ -136,19 +136,21 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     27 Bit        Muxes := 1     
-	   3 Input     24 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 2     
+	   3 Input     24 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 4     
 	   2 Input      7 Bit        Muxes := 1     
-	   5 Input      6 Bit        Muxes := 2     
-	   5 Input      5 Bit        Muxes := 1     
-	  10 Input      3 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 3     
+	   2 Input      6 Bit        Muxes := 2     
+	   7 Input      6 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 2     
+	   7 Input      5 Bit        Muxes := 2     
+	  14 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -172,10 +174,12 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     27 Bit        Muxes := 1     
-	   5 Input      6 Bit        Muxes := 2     
-	   5 Input      5 Bit        Muxes := 1     
-	  10 Input      3 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 3     
+	   2 Input      6 Bit        Muxes := 2     
+	   7 Input      6 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 2     
+	   7 Input      5 Bit        Muxes := 2     
+	  14 Input      3 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
 Module Debounce 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -212,14 +216,13 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-6014] Unused sequential element SS_Driver1/Count_reg was removed.  [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/SS_Driver.v:26]
 WARNING: [Synth 8-3331] design WallClock has unconnected port BTNC
 WARNING: [Synth 8-3331] design WallClock has unconnected port BTNU
-WARNING: [Synth 8-3331] design WallClock has unconnected port BTNL
 WARNING: [Synth 8-3331] design WallClock has unconnected port BTND
 INFO: [Synth 8-3886] merging instance 'AN_reg[2]' (FD) to 'AN_reg[3]'
 INFO: [Synth 8-3886] merging instance 'AN_reg[3]' (FD) to 'SS_reg[7]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\SS_reg[7] )
 WARNING: [Synth 8-3332] Sequential element (SS_reg[7]) is unused and will be removed from module WallClock.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1162 ; free virtual = 4366
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1136 ; free virtual = 4573
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -231,13 +234,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1036 ; free virtual = 4244
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1017 ; free virtual = 4453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1032 ; free virtual = 4241
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4440
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -272,8 +275,32 @@ INFO: [Synth 8-4765] Removing register instance (\debounce1/Count_reg[3]__0 ) fr
 INFO: [Synth 8-4765] Removing register instance (\debounce1/Count_reg[2]__0 ) from module (WallClock) as it is equivalent to (\debounce1/Count_reg[2] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
 INFO: [Synth 8-4765] Removing register instance (\debounce1/Count_reg[1]__0 ) from module (WallClock) as it is equivalent to (\debounce1/Count_reg[1] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
 INFO: [Synth 8-4765] Removing register instance (\debounce1/Count_reg[0]__0 ) from module (WallClock) as it is equivalent to (\debounce1/Count_reg[0] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[23]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[23] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[22]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[22] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[21]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[21] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[20]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[20] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[19]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[19] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[18]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[18] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[17]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[17] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[16]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[16] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[15]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[15] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[14]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[14] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[13]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[13] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[12]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[12] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[11]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[11] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[10]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[10] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[9]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[9] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[8]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[8] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[7]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[7] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[6]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[6] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[5]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[5] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[4]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[4] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[3]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[3] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[2]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[2] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[1]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[1] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
+INFO: [Synth 8-4765] Removing register instance (\debounce2/Count_reg[0]__0 ) from module (WallClock) as it is equivalent to (\debounce2/Count_reg[0] ) and driving same net [/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v:17]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4239
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -297,7 +324,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4240
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -310,7 +337,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4240
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -322,25 +349,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4240
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4240
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4240
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4240
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -357,44 +384,45 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    18|
-|3     |LUT1   |    69|
-|4     |LUT2   |    34|
-|5     |LUT3   |    17|
-|6     |LUT4   |    39|
-|7     |LUT5   |    37|
-|8     |LUT6   |    55|
-|9     |FDRE   |   100|
-|10    |FDSE   |    31|
-|11    |IBUF   |     3|
+|2     |CARRY4 |    24|
+|3     |LUT1   |    90|
+|4     |LUT2   |     5|
+|5     |LUT3   |    16|
+|6     |LUT4   |    81|
+|7     |LUT5   |    46|
+|8     |LUT6   |    76|
+|9     |FDRE   |   150|
+|10    |FDSE   |     7|
+|11    |IBUF   |     4|
 |12    |OBUF   |    17|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+-------------+----------+------+
-|      |Instance     |Module    |Cells |
-+------+-------------+----------+------+
-|1     |top          |          |   421|
-|2     |  SS_Driver1 |SS_Driver |   102|
-|3     |  debounce1  |Debounce  |    95|
-+------+-------------+----------+------+
++------+-------------+-----------+------+
+|      |Instance     |Module     |Cells |
++------+-------------+-----------+------+
+|1     |top          |           |   517|
+|2     |  SS_Driver1 |SS_Driver  |   102|
+|3     |  debounce1  |Debounce   |    88|
+|4     |  debounce2  |Debounce_0 |    90|
++------+-------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1031 ; free virtual = 4240
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1003 ; free virtual = 4439
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1579.426 ; gain = 112.496 ; free physical = 1082 ; free virtual = 4290
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1579.426 ; gain = 471.957 ; free physical = 1082 ; free virtual = 4290
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1580.426 ; gain = 112.496 ; free physical = 1055 ; free virtual = 4492
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.426 ; gain = 472.965 ; free physical = 1055 ; free virtual = 4492
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-55 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
+77 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1581.441 ; gain = 486.559 ; free physical = 1055 ; free virtual = 4264
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1602.441 ; gain = 507.566 ; free physical = 1034 ; free virtual = 4471
 INFO: [Common 17-1381] The checkpoint '/home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.runs/synth_1/WallClock.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1605.453 ; gain = 0.000 ; free physical = 1055 ; free virtual = 4264
-INFO: [Common 17-206] Exiting Vivado at Sun Apr 12 01:20:07 2020...
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1626.453 ; gain = 0.000 ; free physical = 1033 ; free virtual = 4470
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 12 16:37:16 2020...
