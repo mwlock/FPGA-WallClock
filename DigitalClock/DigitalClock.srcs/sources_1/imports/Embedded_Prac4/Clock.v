@@ -15,12 +15,13 @@ module WallClock(
 	output reg [7:0] AN, // Seven segment display enable
 	
 	// LEDs
-	output wire LED
+	output wire [15:0] LED
 	
 );
-
-    assign LED = BTNR;
-
+    // LEDs to indicate button presses
+    assign LED[14] = BTNR;
+    assign LED[15] = BTNL;
+    
 	//Add the reset
 
 
@@ -82,6 +83,8 @@ module WallClock(
 	reg [5:0] seconds='d0;
 	reg [5:0] minutes;
 	reg [4:0] hours;
+	
+    assign LED[5:0] = seconds; // Show seconds on LEDs
 	
 	parameter [2:0] start='d0;
     parameter [2:0] running='d1;

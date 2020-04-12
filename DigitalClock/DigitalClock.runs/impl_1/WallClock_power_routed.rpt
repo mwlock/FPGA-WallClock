@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date             : Sun Apr 12 16:37:57 2020
+| Date             : Sun Apr 12 16:54:04 2020
 | Host             : linux running 64-bit Ubuntu 18.04.3 LTS
 | Command          : report_power -file WallClock_power_routed.rpt -pb WallClock_power_summary_routed.pb -rpx WallClock_power_routed.rpx
 | Design           : WallClock
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 0.100  |
-| Dynamic (W)              | 0.003  |
+| Total On-Chip Power (W)  | 0.102  |
+| Dynamic (W)              | 0.005  |
 | Device Static (W)        | 0.097  |
 | Effective TJA (C/W)      | 4.6    |
 | Max Ambient (C)          | 84.5   |
@@ -56,9 +56,9 @@ Table of Contents
 |   Register     |    <0.001 |      157 |    126800 |            0.12 |
 |   Others       |     0.000 |        8 |       --- |             --- |
 | Signals        |    <0.001 |      353 |       --- |             --- |
-| I/O            |    <0.001 |       21 |       210 |           10.00 |
+| I/O            |     0.002 |       36 |       210 |           17.14 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.100 |          |           |                 |
+| Total          |     0.102 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,7 +70,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.018 |       0.003 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
-| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
+| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -137,7 +137,7 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| WallClock    |     0.003 |
+| WallClock    |     0.005 |
 |   SS_Driver1 |    <0.001 |
 |   debounce1  |    <0.001 |
 |   debounce2  |    <0.001 |

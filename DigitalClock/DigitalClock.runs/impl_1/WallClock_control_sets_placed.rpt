@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Sun Apr 12 16:37:40 2020
+| Date         : Sun Apr 12 16:53:46 2020
 | Host         : linux running 64-bit Ubuntu 18.04.3 LTS
 | Command      : report_control_sets -verbose -file WallClock_control_sets_placed.rpt
 | Design       : WallClock
@@ -38,7 +38,7 @@ Table of Contents
 | No           | Yes                   | No                     |              30 |           12 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              14 |            4 |
+| Yes          | Yes                   | No                     |              14 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -49,7 +49,7 @@ Table of Contents
 |     Clock Signal     |   Enable Signal   |  Set/Reset Signal  | Slice Load Count | Bel Load Count |
 +----------------------+-------------------+--------------------+------------------+----------------+
 |  CLK100MHZ_IBUF_BUFG | seconds           | seconds[5]_i_1_n_0 |                2 |              6 |
-|  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF            |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF            |                3 |              8 |
 |  CLK100MHZ_IBUF_BUFG |                   | SW_IBUF            |               12 |             30 |
 |  CLK100MHZ_IBUF_BUFG |                   |                    |               44 |            113 |
 +----------------------+-------------------+--------------------+------------------+----------------+
