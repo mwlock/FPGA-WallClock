@@ -2,7 +2,8 @@ module SS_Driver(
     input Clk, Reset,
     input [3:0] BCD7,BCD6,BCD5,BCD4,BCD3, BCD2, BCD1, BCD0, // Binary-coded decimal input
     output reg [7:0] SegmentDrivers, // Digit drivers (active low)
-    output reg [7:0] SevenSegment // Segments (active low)
+    output reg [7:0] SevenSegment, // Segments (active low)
+    output reg [16:0] CountOut
 );
 
 
@@ -24,6 +25,7 @@ reg [16:0]Count;
 // Scroll through the digits, switching one on at a time
 always @(posedge Clk) begin
  Count <= Count + 1'b1;
+ CountOut <= Count;
  if ( Reset) SegmentDrivers <= 8'hFE;
  else if(&Count) SegmentDrivers <= {SegmentDrivers[6:0], SegmentDrivers[7]};
 end

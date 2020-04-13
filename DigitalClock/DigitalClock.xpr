@@ -70,6 +70,15 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/Embedded_Prac4/PWM.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../PWM.v"/>
+          <Attr Name="ImportTime" Val="1586357298"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/Embedded_Prac4/SS_Driver.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../SS_Driver.v"/>

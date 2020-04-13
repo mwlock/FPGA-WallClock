@@ -18,6 +18,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/BCD_Decoder.v
   /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Debounce.v
+  /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/PWM.v
   /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/SS_Driver.v
   /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.srcs/sources_1/imports/Embedded_Prac4/Clock.v
 }

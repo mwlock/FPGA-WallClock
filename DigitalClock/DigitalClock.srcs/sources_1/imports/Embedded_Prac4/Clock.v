@@ -3,7 +3,7 @@
 module WallClock(
 	//inputs - these will depend on your board's constraint files
 	input	CLK100MHZ,
-    input   SW , // Acting as ON/OFF switch for now 
+    input   [15:0]SW , // Acting as ON/OFF switch for now 
     input   BTNC,
     input   BTNU,
     input   BTNL,
@@ -44,6 +44,19 @@ module WallClock(
         BTNL,
         incHourBtn 
     );
+    
+    	
+    // Initialize PWM signal
+    wire [16:0] Count;
+    wire PWM;
+    assign LED[13] = PWM;
+    
+    PWM PWMSignal(
+        CLK100MHZ,
+        Count,            //input clock
+        SW[7:0], 
+        PWM     //output of PWM    
+    );
 	
 	// registers for storing the time
     reg [3:0]hours1=4'd0;
@@ -64,16 +77,18 @@ module WallClock(
 		
     // Update Display
     always @(posedge CLK100MHZ) begin
-        AN[7:0]<={SegmentDrivers[7:4],2'b11,SegmentDrivers[1:0]};
+        if(PWM )AN[7:0]<={SegmentDrivers[7:4],2'b11,SegmentDrivers[1:0]};
+        else AN[7:0]<= 8'hFF;
         SS[7:0]<=SevenSegment[7:0];      
     end
 	
 	// You will need to change some signals depending on you constraints
 	SS_Driver SS_Driver1(
 		CLK100MHZ,
-	    SW,
+	    SW[15],
 		hours1,hours2,mins1,mins2, 'd0, 'd0, secs1, secs2, // Use temporary test values before adding hours2, hours1, mins2, mins1
-		SegmentDrivers, SevenSegment
+		SegmentDrivers, SevenSegment,
+		Count
 	);
 	
 	// Moore FSM for clock
@@ -98,7 +113,7 @@ module WallClock(
     
     // Sequential logic
     always @(posedge CLK100MHZ) begin
-        if (SW)  currentState<=start;
+        if (SW[15])  currentState<=start;
         else currentState <=nextState;
     end
     
@@ -180,7 +195,7 @@ module WallClock(
 	always @(posedge CLK100MHZ) begin	
 	
 	   // Reset timer
-	   if (SW) timer <= 1'b0; 	
+	   if (SW[15]) timer <= 1'b0; 	
 	             
        // Increment timer
 	   else begin
