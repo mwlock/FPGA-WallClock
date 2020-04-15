@@ -1,12 +1,12 @@
 
 # FPGA Wall Clock
 This project was created for a practical on the NEXYS A7 100t FPGA in the EEE4020F High Performance Embedded Systems 2019 course at the University of Cape Town.
-The full practical instructions and specifications manual can be found [http://ocw.ee.uct.ac.za/courses/EEE4120F/Practicals.html](here), 
-while further basic instructions on how to setup and use an FPGA can be found on the official course [http://ocw.ee.uct.ac.za/courses/EEE4120F/Practicals.html](wiki page)
+The full practical instructions and specifications manual can be found (here)[http://ocw.ee.uct.ac.za/courses/EEE4120F/Practicals.html], 
+while further basic instructions on how to setup and use an FPGA can be found on the official course (wiki page)[http://ocw.ee.uct.ac.za/courses/EEE4120F/Practicals.html].
 
 ## Project Description
-This projects implements a digital 24 hour clock on the NEXYS A7 100t FPGA. Timing is kept using counters, working on the basis of counting the 100 MHz clock signal.
-The time is displayed on two seven segment displays. One is used to show the 24 hour clock, while the other is used to display seconds.
+This projects implements a digital 24-hour clock on the NEXYS A7 100t FPGA. Timing is kept using counters, working on the basis of counting the 100 MHz clock signal.
+The time is displayed on two seven segment displays. One is used to show the 24-hour clock, while the other is used to display seconds.
 Further features of this clock include:
 - Button to increment minutes 
 - Button to increment hours
@@ -17,24 +17,49 @@ Further features of this clock include:
 The following labeled diagram shows the various displays and controls for the project:
 ![Labeled Diagram](/images/fpga_labeled.jpeg)
 
+**24 Hour Display**
+*Seven segment display [1]* shows the current time in the 24-hour format.
+
+**Seconds Display**
+*Seven segment display [2]* shows the current seconds in a decimal format, while the seconds are also shown on *LEDs [3]* in a binary format. 
+
+
+**Increment Minutes**
+The minutes will automatically increment when the seconds overflow, and will automatically reset to 0 before the minutes overflow.
+*Button [4]* can be used to manually increment the minutes. This button has been debounced, and will not affect the hours or seconds counter.
+*LED [7]* will light up to indicate that the increment minutes button is pressed down.
+
+**Increment Hours**
+The hours will automatically increment when the minutes overflow, and will automatically reset to 0 before the hours overflow.
+*Button [5]* can be used to manually increment the hours. This button has been debounced, and will not affect the minutes or seconds counter.
+*LED [8]* will light up to indicate that the increment hours button is pressed down.
+
+**Control Seven Segment Display Brightness**
+The brightness of *Seven segment display [1] and [2]* can be controlled using *switches[6]*. These switches act as a binary counter to control brightness using PWM, 
+with 0 indicating a duting cycle of 0% and 255 indicating a duty cycle of 100%.
+*LED [9]*'s brightness is also controlled by these switches.
+
+**Power/Reset**
+All displays and counters can be turned on and off using *switch [10]*. 
+Once the system has been turned off, the time is reset such that it will start from 00:00::00 once is is turned on.
 
 ## Files
 * TLM
 
-  The top level module, called "Clock.v" in the source files on GitHub, contains the primary logic for your wall clock and allows you to implement I/O and other modules.
-  It's important you leave the signals and registers as they are in this file, as this is what will be used in the automatic testbenches to mark your implementation.
-* Delay_Reset
+  The top level module, called "Clock.v" contains the primary logic for the wall clock and allows you to implement I/O and other modules.
 
-   It's also useful as many components require a set up time. So by using a delayed reset signal, we can cater for reset times of peripherals.
 * Seven-Segment Driver
 
-   This module takes 4 BCD values and displays them on the seven segment display.
+   This module takes 8 BCD values and displays them on the seven segment displays.
+
 * Decoder
 
     Used by the Seven-Segment Driver to decode decimal to the appropriate cathode pins.
+
 * Debounce
 
-   A debounce module you'll need to implement in order to debounce button presses.
+   A debounce module needed in order to debounce button presses.
+
 * PWM
 
-   A module you'll need to implement in order to give the seven segment displays changing brightness. This can be tricky, it's suggested you leave it for last.
+   Module that creates PWM signal to control brightness of Seven-Segment Displays. The cycle is matched using the output of the Count register of the Seven-Segment Driver Module
