@@ -68,7 +68,9 @@ module WallClock(
 	
 	// Register for keeping time
 	reg [26:0] timer = 'd0;
-	reg [26:0] second = 'd100000000; // Determines how long a second will be
+	
+	// Default second value = 'd100000000
+	reg [26:0] second = 'd5; // Determines how long a second will be
     
 	//Initialize seven segment
 	reg  [3:0] leftSegment = 4'b1111; // Turn off left segment
@@ -204,7 +206,12 @@ module WallClock(
             if(timer == (second)) begin
                 timer <= 1'b0;
             end
-		end		
+		end	
+		
+		// Update output registers
+//		secondsOut<=seconds;	
+//		minutesOut<=minutes;
+//        hoursOut<=hoursOut;
 	end
 	
 endmodule  

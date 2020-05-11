@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon May 11 15:10:13 2020
+# Process ID: 12141
+# Current directory: /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.sim/sim_1/behav
+# Command line: wbtcv -mode batch -source /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.sim/sim_1/behav/xsim.dir/TestBench_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.sim/sim_1/behav/webtalk.log
+# Journal file: /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.sim/sim_1/behav/webtalk.jou
+#-----------------------------------------------------------
+source /home/matthew/Matthew/UCT/2020/Embedded3/Embedded_Prac4/DigitalClock/DigitalClock.sim/sim_1/behav/xsim.dir/TestBench_behav/webtalk/xsim_webtalk.tcl -notrace
