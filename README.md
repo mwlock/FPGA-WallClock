@@ -2,7 +2,7 @@
 # FPGA Wall Clock
 This project was created for a practical on the NEXYS A7 100t FPGA in the EEE4020F High Performance Embedded Systems 2019 course at the University of Cape Town.
 The full practical instructions and specifications manual can be found [here](http://ocw.ee.uct.ac.za/courses/EEE4120F/Practicals.html), 
-while further basic instructions on how to setup and use an FPGA can be found on the official course [wiki page](http://ocw.ee.uct.ac.za/courses/EEE4120F/Practicals.html).
+while further basic instructions on how to setup and use an FPGA can be found on the official course [wiki page](http://wiki.ee.uct.ac.za/Xilinx:Vivado).
 
 ## Project Description
 This projects implements a digital 24-hour clock on the NEXYS A7 100t FPGA. Timing is kept using counters, working on the basis of counting the 100 MHz clock signal.
