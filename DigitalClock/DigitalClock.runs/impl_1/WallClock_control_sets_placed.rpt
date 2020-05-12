@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Mon May 11 14:55:16 2020
+| Date         : Tue May 12 11:09:56 2020
 | Host         : linux running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_control_sets -verbose -file WallClock_control_sets_placed.rpt
 | Design       : WallClock
@@ -33,12 +33,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             116 |           41 |
+| No           | No                    | No                     |             116 |           37 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              36 |           16 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              14 |            6 |
+| Yes          | Yes                   | No                     |              14 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -49,10 +49,10 @@ Table of Contents
 |     Clock Signal     |   Enable Signal   |   Set/Reset Signal   | Slice Load Count | Bel Load Count |
 +----------------------+-------------------+----------------------+------------------+----------------+
 |  CLK100MHZ_IBUF_BUFG |                   | SS_Driver1/AN_reg[0] |                2 |              6 |
-|  CLK100MHZ_IBUF_BUFG | seconds           | seconds[5]_i_1_n_0   |                2 |              6 |
-|  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF[15]          |                4 |              8 |
+|  CLK100MHZ_IBUF_BUFG | seconds           | seconds[5]_i_1_n_0   |                1 |              6 |
+|  CLK100MHZ_IBUF_BUFG | SS_Driver1/p_0_in | SW_IBUF[15]          |                2 |              8 |
 |  CLK100MHZ_IBUF_BUFG |                   | SW_IBUF[15]          |               14 |             30 |
-|  CLK100MHZ_IBUF_BUFG |                   |                      |               41 |            116 |
+|  CLK100MHZ_IBUF_BUFG |                   |                      |               37 |            116 |
 +----------------------+-------------------+----------------------+------------------+----------------+
 
 

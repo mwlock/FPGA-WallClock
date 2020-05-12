@@ -70,7 +70,7 @@ module WallClock(
 	reg [26:0] timer = 'd0;
 	
 	// Default second value = 'd100000000
-	reg [26:0] second = 'd5; // Determines how long a second will be
+	reg [26:0] second = 'd2; // Determines how long a second will be
     
 	//Initialize seven segment
 	reg  [3:0] leftSegment = 4'b1111; // Turn off left segment
@@ -127,10 +127,14 @@ module WallClock(
             running:
                 if (incMinBtn) nextState <=incMinOnly;
                 else if (incHourBtn) nextState <=incHourOnly;
-                else if (timer == (second-'d1)) nextState <=incSec;  // Account for time taken to change state
-                else if (seconds == 'd60 ) nextState <=incMin;
-                else if (minutes == 'd60) nextState <=incHr;
-                else if (hours == 'd24) nextState <=start;
+                else if (timer == (second-'d1)) begin
+                    if(seconds != 'd59 ) nextState <=incSec;
+                    else begin
+                        if(minutes != 'd59 ) nextState <=incMin; 
+                        else nextState <=incHr;                    
+                    end
+                
+                end
                 else nextState<=running;
             incSec:
                 nextState<=running;
@@ -172,7 +176,8 @@ module WallClock(
             incHr: begin
                 seconds <= 1'b0;
                 minutes <= 1'b0;
-                hours <= hours + 1'b1;
+                if (hours=='d23) hours<=0;
+                else hours <= hours + 1'b1;
             end  
             
             incHourOnly: begin

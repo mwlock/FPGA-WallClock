@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date             : Mon May 11 14:55:35 2020
+| Date             : Tue May 12 11:10:14 2020
 | Host             : linux running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file WallClock_power_routed.rpt -pb WallClock_power_summary_routed.pb -rpx WallClock_power_routed.rpx
 | Design           : WallClock
@@ -49,14 +49,14 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      438 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      198 |     63400 |            0.31 |
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      439 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      200 |     63400 |            0.32 |
 |   CARRY4       |    <0.001 |       26 |     15850 |            0.16 |
 |   Register     |    <0.001 |      166 |    126800 |            0.13 |
 |   Others       |     0.000 |        9 |       --- |             --- |
-| Signals        |    <0.001 |      373 |       --- |             --- |
-| I/O            |     0.009 |       44 |       210 |           20.95 |
+| Signals        |    <0.001 |      374 |       --- |             --- |
+| I/O            |     0.008 |       44 |       210 |           20.95 |
 | Static Power   |     0.097 |          |           |                 |
 | Total          |     0.108 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

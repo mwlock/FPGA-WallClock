@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Mon May 11 14:54:52 2020
+| Date         : Tue May 12 11:09:32 2020
 | Host         : linux running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -file WallClock_utilization_synth.rpt -pb WallClock_utilization_synth.pb
 | Design       : WallClock
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  286 |     0 |     63400 |  0.45 |
-|   LUT as Logic          |  286 |     0 |     63400 |  0.45 |
+| Slice LUTs*             |  288 |     0 |     63400 |  0.45 |
+|   LUT as Logic          |  288 |     0 |     63400 |  0.45 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |  166 |     0 |    126800 |  0.13 |
 |   Register as Flip Flop |  166 |     0 |    126800 |  0.13 |
@@ -147,16 +147,16 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  153 |        Flop & Latch |
+| LUT4     |   92 |                 LUT |
 | LUT1     |   91 |                 LUT |
-| LUT4     |   88 |                 LUT |
-| LUT6     |   75 |                 LUT |
-| LUT5     |   47 |                 LUT |
+| LUT6     |   72 |                 LUT |
+| LUT5     |   46 |                 LUT |
 | CARRY4   |   26 |          CarryLogic |
 | OBUF     |   25 |                  IO |
-| LUT3     |   16 |                 LUT |
+| LUT3     |   14 |                 LUT |
 | FDSE     |   13 |        Flop & Latch |
 | IBUF     |   12 |                  IO |
-| LUT2     |    8 |                 LUT |
+| LUT2     |   11 |                 LUT |
 | OBUFT    |    7 |                  IO |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
