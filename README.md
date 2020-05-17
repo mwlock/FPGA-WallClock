@@ -4,6 +4,10 @@ This project was created for a practical on the NEXYS A7 100t FPGA in the EEE402
 The full practical instructions and specifications manual can be found [here](http://ocw.ee.uct.ac.za/courses/EEE4120F/Practicals.html), 
 while further basic instructions on how to setup and use an FPGA can be found on the official course [wiki page](http://wiki.ee.uct.ac.za/Xilinx:Vivado).
 
+## Video Demonstration
+A video demonstration for this project has been uploaded to YouTube. Click on the thumbnail below to be taken to the demonstration.
+[![Video Demonstration](/images/demonstration_thumbnail.jpeg)](https://www.youtube.com/watch?v=FhooJ4PG5KM&list=PLIYLdk57DI7A1hTAwtIqUQzsAEMUl7pr1&index=1 "Video Demonstration")
+
 ## Project Description
 This projects implements a digital 24-hour clock on the NEXYS A7 100t FPGA. Timing is kept using counters, working on the basis of counting the 100 MHz clock signal.
 The time is displayed on two seven segment displays. One is used to show the 24-hour clock, while the other is used to display seconds.
