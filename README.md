@@ -6,7 +6,8 @@ while further basic instructions on how to setup and use an FPGA can be found on
 
 ## Video Demonstration
 A video demonstration for this project has been uploaded to YouTube. Click on the thumbnail below to be taken to the demonstration.
-[![Video Demonstration](/images/demonstration_thumbnail.jpeg)](https://www.youtube.com/watch?v=FhooJ4PG5KM&list=PLIYLdk57DI7A1hTAwtIqUQzsAEMUl7pr1&index=1 "Video Demonstration")
+<br>
+[![Video Demonstration](/images/demonstration_thumbnail.png)](https://www.youtube.com/watch?v=FhooJ4PG5KM&list=PLIYLdk57DI7A1hTAwtIqUQzsAEMUl7pr1&index=1 "Video Demonstration")
 
 ## Project Description
 This projects implements a digital 24-hour clock on the NEXYS A7 100t FPGA. Timing is kept using counters, working on the basis of counting the 100 MHz clock signal.
